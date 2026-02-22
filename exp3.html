@@ -222,7 +222,7 @@ const startTrumpQuestionLabor = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Use previously stored value, or default to 5 if not set yet
-        trump_previous_labor = trump_previous_labor || 5; // ensure it's always set
+        trump_previous_labor = trump_previous_labor ?? 5; // ensure it's always set
         let start_value = trump_previous_labor;
         return `
             <div style="width:1000px;">        
@@ -239,15 +239,17 @@ const startTrumpQuestionLabor = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 trump_previous_labor = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -267,7 +269,7 @@ const startBidenQuestionLabor = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_labor is set (default = 5)
-        previous_biden_labor = previous_biden_labor || 5;
+        previous_biden_labor = previous_biden_labor ?? 5;
         let start_value = previous_biden_labor;
         return `
             <div style="width:1000px;">
@@ -285,15 +287,17 @@ const startBidenQuestionLabor = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>',
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 previous_biden_labor = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -544,7 +548,7 @@ const endTrumpQuestionLabor = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure trump_previous_labor is set (default = 5)
-        trump_previous_labor = trump_previous_labor || 5;
+        trump_previous_labor = trump_previous_labor ?? 5;
         let start_value = trump_previous_labor;
         return `
             <div style="width:1000px;">
@@ -594,7 +598,7 @@ const endBidenQuestionLabor = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_labor is set (default = 5)
-        previous_biden_labor = previous_biden_labor || 5;
+        previous_biden_labor = previous_biden_labor ?? 5;
         let start_value = previous_biden_labor;
         return `
             <div style="width:1000px;">
@@ -682,7 +686,7 @@ const startTrumpQuestionSP500 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Use previously stored value, or default to 5 if not set yet
-        trump_previous_sp500 = trump_previous_sp500 || 5; // ensure it's always set
+        trump_previous_sp500 = trump_previous_sp500 ?? 5; // ensure it's always set
         let start_value = trump_previous_sp500;
         return `
             <div style="width:1000px;">        
@@ -699,15 +703,17 @@ const startTrumpQuestionSP500 = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 trump_previous_sp500 = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -727,7 +733,7 @@ const startBidenQuestionSP500 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_sp500 is set (default = 5)
-        previous_biden_sp500 = previous_biden_sp500 || 5;
+        previous_biden_sp500 = previous_biden_sp500 ?? 5;
         let start_value = previous_biden_sp500;
         return `
             <div style="width:1000px;">
@@ -745,15 +751,17 @@ const startBidenQuestionSP500 = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 previous_biden_sp500 = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -918,7 +926,7 @@ const trumpCounterSP500 = {
 
     // Range check when clicking continue
     continueBtn.addEventListener('click', function (e) {
-      const value = parseInt(input.value);
+      const value = parseFloat(input.value);
       if (value < 400 || value > 8000 || isNaN(value)) {
         e.stopImmediatePropagation(); // prevent jsPsych from finishing trial
         alert("Please enter a value between 400 and 8000.");
@@ -1004,7 +1012,7 @@ const endTrumpQuestionSP500 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure trump_previous_sp500 is set (default = 5)
-        trump_previous_sp500 = trump_previous_sp500 || 5;
+        trump_previous_sp500 = trump_previous_sp500 ?? 5;
         let start_value = trump_previous_sp500;
         return `
             <div style="width:1000px;">
@@ -1054,7 +1062,7 @@ const endBidenQuestionSP500 = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_sp500 is set (default = 5)
-        previous_biden_sp500 = previous_biden_sp500 || 5;
+        previous_biden_sp500 = previous_biden_sp500 ?? 5;
         let start_value = previous_biden_sp500;
         return `
             <div style="width:1000px;">
@@ -1141,7 +1149,7 @@ const startTrumpQuestionInflation = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Use previously stored value, or default to 5 if not set yet
-        trump_previous_inflation = trump_previous_inflation || 5; // ensure it's always set
+        trump_previous_inflation = trump_previous_inflation ?? 5; // ensure it's always set
         let start_value = trump_previous_inflation;
         return `
             <div style="width:1000px;">        
@@ -1158,15 +1166,17 @@ const startTrumpQuestionInflation = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 trump_previous_inflation = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -1186,7 +1196,7 @@ const startBidenQuestionInflation = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_inflation is set (default = 5)
-        previous_biden_inflation = previous_biden_inflation || 5;
+        previous_biden_inflation = previous_biden_inflation ?? 5;
         let start_value = previous_biden_inflation;
         return `
             <div style="width:1000px;">
@@ -1204,15 +1214,17 @@ const startBidenQuestionInflation = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 previous_biden_inflation = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -1463,7 +1475,7 @@ const endTrumpQuestionInflation = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure trump_previous_inflation is set (default = 5)
-        trump_previous_inflation = trump_previous_inflation || 5;
+        trump_previous_inflation = trump_previous_inflation ?? 5;
         let start_value = trump_previous_inflation;
         return `
             <div style="width:1000px;">
@@ -1513,7 +1525,7 @@ const endBidenQuestionInflation = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_inflation is set (default = 5)
-        previous_biden_inflation = previous_biden_inflation || 5;
+        previous_biden_inflation = previous_biden_inflation ?? 5;
         let start_value = previous_biden_inflation;
         return `
             <div style="width:1000px;">
@@ -1602,7 +1614,7 @@ const startTrumpQuestionDebt = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Use previously stored value, or default to 5 if not set yet
-        trump_previous_debt = trump_previous_debt || 5; // ensure it's always set
+        trump_previous_debt = trump_previous_debt ?? 5; // ensure it's always set
         let start_value = trump_previous_debt;
         return `
             <div style="width:1000px;">        
@@ -1619,15 +1631,17 @@ const startTrumpQuestionDebt = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 trump_previous_debt = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -1647,7 +1661,7 @@ const startBidenQuestionDebt = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_debt is set (default = 5)
-        previous_biden_debt = previous_biden_debt || 5;
+        previous_biden_debt = previous_biden_debt ?? 5;
         let start_value = previous_biden_debt;
         return `
             <div style="width:1000px;">
@@ -1665,15 +1679,17 @@ const startBidenQuestionDebt = {
         `;
     },
     choices: ['Continue'],
-    button_html: '<button class="jspsych-btn" id="continue-btn">%choice%</button>', // enable immediately
+    button_html: '<button class="jspsych-btn" id="continue-btn" disabled>%choice%</button>', 
     on_load: function () {
         var slider = document.getElementById('slider');
         var sliderValue = document.getElementById('slider-value');
+        var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
                 previous_biden_debt = Number(slider.value);  // save as number
+                continueBtn.disabled = false;
             };
         }
     },
@@ -1768,8 +1784,7 @@ const bidenBLDebt = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "28.53" && endInput.value.trim() === "36.21" || 
-          startInput.value.trim() === "28.53" && endInput.value.trim() === "34") {
+      if (startInput.value.trim() === "28.53" && endInput.value.trim() === "36.21") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -1925,7 +1940,7 @@ const endTrumpQuestionDebt = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure trump_previous_debt is set (default = 5)
-        trump_previous_debt = trump_previous_debt || 5;
+        trump_previous_debt = trump_previous_debt ?? 5;
         let start_value = trump_previous_debt;
         return `
             <div style="width:1000px;">
@@ -1975,7 +1990,7 @@ const endBidenQuestionDebt = {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
         // Ensure previous_biden_debt is set (default = 5)
-        previous_biden_debt = previous_biden_debt || 5;
+        previous_biden_debt = previous_biden_debt ?? 5;
         let start_value = previous_biden_debt;
         return `
             <div style="width:1000px;">
@@ -2323,29 +2338,6 @@ jsPsych.data.addProperties({
 /***********************
  * RUN EXPERIMENT
  ***********************/
-jsPsych.run(selectedTimeline);
-
-// ALTERNATIVE: Manually assign everyone to counterfactual condition
-// var selectedTimeline = cond2_timeline;
-// var condition = "cf";
-
-// ALTERNATIVE: Manually assign everyone to baseline condition
-// var selectedTimeline = cond1_timeline;
-// var condition = "baseline";
-
-
-// Define the conditions
- var condition;
-    if (selectedTimeline === cond1_timeline) {
-       condition = "baseline";
-    }else if (selectedTimeline === cond2_timeline) {
-        condition = "cf"
-    }
-
-// Store the condition in jsPsych's data
-    jsPsych.data.addProperties({
-        condition: condition
-    });
 
 // Save data at the end of the experiment (make sure to update experiment_id)
               const save_data = {
