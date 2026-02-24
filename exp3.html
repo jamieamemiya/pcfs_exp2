@@ -328,8 +328,8 @@ const trumpBLLabor = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:red;">Donald Trump's (R)</span></strong> presidency in 2017, 
-        the labor force participation rate was <strong>62.8%.</strong></p>
-        <p>By the end of his presidency, the labor force participation rate was <strong>61.4%.</strong></p>
+        the labor force participation rate was <strong>62.7%.</strong></p>
+        <p>By the end of his presidency, the labor force participation rate was <strong>61.5%.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the labor force participation rate during Trump's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
           <input type="number" id="trump-start" placeholder="Start value (%)" step="0.1" style="font-size: 1.2em; width: 150px; text-align: center; margin-right: 20px;">
@@ -347,7 +347,7 @@ const trumpBLLabor = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "62.8" && endInput.value.trim() === "61.4") {
+      if (startInput.value.trim() === "62.7" && endInput.value.trim() === "61.5") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -383,7 +383,7 @@ const bidenBLLabor = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the labor force participation rate was <strong>61.4%.</strong></p>
+        the labor force participation rate was <strong>61.5%.</strong></p>
         <p>By the end of his presidency, the labor force participation rate was <strong>62.5%.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the labor force participation rate during Biden's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
@@ -402,7 +402,7 @@ const bidenBLLabor = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "61.4" && endInput.value.trim() === "62.5") {
+      if (startInput.value.trim() === "61.5" && endInput.value.trim() === "62.5") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -443,7 +443,7 @@ const trumpCounterLabor = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:red;">Donald Trump's (R)</span></strong> presidency in 2017, 
-        the labor force participation rate was <strong>62.8%</strong> and by the end it was <strong>61.4%.</strong></p>
+        the labor force participation rate was <strong>62.7%</strong> and by the end it was <strong>61.5%.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:red;">Donald Trump (R)</span></strong>, 
         <strong><i><span style="color:blue;">the Democratic candidate (Hillary Clinton)</span></i></strong> 
@@ -501,7 +501,7 @@ const bidenCounterLabor = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the labor force participation rate was <strong>61.4%</strong> and by the end it was <strong>62.5%.</strong></p>
+        the labor force participation rate was <strong>61.5%</strong> and by the end it was <strong>62.5%.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:blue;">Joe Biden (D)</span></strong>, 
         <strong><i><span style="color:red;">the Republican candidate (Donald Trump)</span></i></strong> 
@@ -857,7 +857,7 @@ const bidenBLSP500 = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the S&P 500 was <strong>3714.</strong></p>
+        the S&P 500 was <strong>3756.</strong></p>
         <p>By the end of his presidency, the S&P 500 was <strong>5882.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the S&P 500 during Biden's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
@@ -876,7 +876,7 @@ const bidenBLSP500 = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "3714" && endInput.value.trim() === "5882") {
+      if (startInput.value.trim() === "3756" && endInput.value.trim() === "5882") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -975,7 +975,7 @@ const bidenCounterSP500 = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the S&P 500 was <strong>3714</strong> and by the end it was <strong>5882.</strong></p>
+        the S&P 500 was <strong>3756</strong> and by the end it was <strong>5882.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:blue;">Joe Biden (D)</span></strong>, 
         <strong><i><span style="color:red;">the Republican candidate (Donald Trump)</span></i></strong> 
@@ -1275,8 +1275,8 @@ const trumpBLInflation = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:red;">Donald Trump's (R)</span></strong> presidency in 2017, 
-        the inflation rate was <strong>2.5%.</strong></p>
-        <p>By the end of his presidency, the inflation rate was <strong>1.4%.</strong></p>
+        the inflation rate was <strong>2.1%.</strong></p>
+        <p>By the end of his presidency, the inflation rate was <strong>1.3%.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the inflation rate during Trump's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
           <input type="number" id="trump-start" placeholder="Start value (%)" step="0.1" style="font-size: 1.2em; width: 150px; text-align: center; margin-right: 20px;">
@@ -1294,7 +1294,7 @@ const trumpBLInflation = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "2.5" && endInput.value.trim() === "1.4") {
+      if (startInput.value.trim() === "2.1" && endInput.value.trim() === "1.3") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -1330,7 +1330,7 @@ const bidenBLInflation = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the inflation rate was <strong>1.4%.</strong></p>
+        the inflation rate was <strong>1.3%.</strong></p>
         <p>By the end of his presidency, the inflation rate was <strong>2.9%.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the inflation rate during Biden's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
@@ -1349,7 +1349,7 @@ const bidenBLInflation = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "1.4" && endInput.value.trim() === "2.9") {
+      if (startInput.value.trim() === "1.3" && endInput.value.trim() === "2.9") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -1390,7 +1390,7 @@ const trumpCounterInflation = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:red;">Donald Trump's (R)</span></strong> presidency in 2017, 
-        the inflation rate was <strong>2.5%</strong> and by the end it was <strong>1.4%.</strong></p>
+        the inflation rate was <strong>2.1%</strong> and by the end it was <strong>1.3%.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:red;">Donald Trump (R)</span></strong>, 
         <strong><i><span style="color:blue;">the Democratic candidate (Hillary Clinton)</span></i></strong> 
@@ -1448,7 +1448,7 @@ const bidenCounterInflation = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the inflation rate was <strong>1.4%</strong> and by the end it was <strong>2.9%.</strong></p>
+        the inflation rate was <strong>1.3%</strong> and by the end it was <strong>2.9%.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:blue;">Joe Biden (D)</span></strong>, 
         <strong><i><span style="color:red;">the Republican candidate (Donald Trump)</span></i></strong> 
@@ -1751,7 +1751,7 @@ const trumpBLDebt = {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:red;">Donald Trump's (R)</span></strong> presidency in 2017, 
         the national debt was <strong>$19.85 trillion.</strong></p>
-        <p>By the end of his presidency, the national debt was <strong>$28.53 trillion.</strong></p>
+        <p>By the end of his presidency, the national debt was <strong>$28.13 trillion.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the national debt during Trump's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
           <input type="number" id="trump-start" placeholder="Start value (trillions)" step="0.01" style="font-size: 1.2em; width: 150px; text-align: center; margin-right: 20px;">
@@ -1769,7 +1769,7 @@ const trumpBLDebt = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "19.85" && endInput.value.trim() === "28.53") {
+      if (startInput.value.trim() === "19.85" && endInput.value.trim() === "28.13") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -1805,7 +1805,7 @@ const bidenBLDebt = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the national debt was <strong>$28.53 trillion.</strong></p>
+        the national debt was <strong>$28.13 trillion.</strong></p>
         <p>By the end of his presidency, the national debt was <strong>$36.21 trillion.</strong></p>
         <p>Please type the <u>starting</u> and <u>ending</u> values of the national debt during Biden's presidency in the boxes below:</p>
         <div style="margin-top: 20px; text-align:center;">
@@ -1824,7 +1824,7 @@ const bidenBLDebt = {
     var continueBtn = document.getElementById('continue-btn');
 
     function checkInputs() {
-      if (startInput.value.trim() === "28.53" && endInput.value.trim() === "36.21") {
+      if (startInput.value.trim() === "28.13" && endInput.value.trim() === "36.21") {
         continueBtn.disabled = false;
       } else {
         continueBtn.disabled = true;
@@ -1865,7 +1865,7 @@ const trumpCounterDebt = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:red;">Donald Trump's (R)</span></strong> presidency in 2017, 
-        the national debt was <strong>$19.85 trillion</strong> and by the end it was <strong>$28.53 trillion.</strong></p>
+        the national debt was <strong>$19.85 trillion</strong> and by the end it was <strong>$28.13 trillion.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:red;">Donald Trump (R)</span></strong>, 
         <strong><i><span style="color:blue;">the Democratic candidate (Hillary Clinton)</span></i></strong> 
@@ -1923,7 +1923,7 @@ const bidenCounterDebt = {
   stimulus: function () {
     return `<div style="width:1000px;">
         <p>At the beginning of <strong><span style="color:blue;">Joe Biden's (D)</span></strong> presidency in 2021, 
-        the national debt was <strong>$28.53 trillion</strong> and by the end it was <strong>$36.21 trillion.</strong></p>
+        the national debt was <strong>$28.13 trillion</strong> and by the end it was <strong>$36.21 trillion.</strong></p>
         
         <p>Suppose that, instead of <strong><span style="color:blue;">Joe Biden (D)</span></strong>, 
         <strong><i><span style="color:red;">the Republican candidate (Donald Trump)</span></i></strong> 
