@@ -246,12 +246,17 @@ const startTrumpQuestionLabor = {
         var continueBtn = document.getElementById('continue-btn');
 
         if (slider) {
-            slider.oninput = function () {
-                sliderValue.innerHTML = slider.value;
-                trump_previous_labor = Number(slider.value);  // save as number
-                continueBtn.disabled = false;
-            };
-        }
+        slider.oninput = function () {
+        sliderValue.innerHTML = slider.value;
+        trump_previous_labor = Number(slider.value);
+        continueBtn.disabled = false;
+    };
+    slider.onclick = function () {
+        sliderValue.innerHTML = slider.value;
+        trump_previous_labor = Number(slider.value);
+        continueBtn.disabled = false;
+    };
+}
     },
     on_finish: function (data) {
         // always assign current slider value
@@ -296,7 +301,12 @@ const startBidenQuestionLabor = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                previous_biden_labor = Number(slider.value);  // save as number
+                previous_biden_labor = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                previous_biden_labor = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
@@ -712,7 +722,12 @@ const startTrumpQuestionSP500 = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                trump_previous_sp500 = Number(slider.value);  // save as number
+                trump_previous_sp500 = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                trump_previous_sp500 = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
@@ -760,7 +775,12 @@ const startBidenQuestionSP500 = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                previous_biden_sp500 = Number(slider.value);  // save as number
+                previous_biden_sp500 = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                previous_biden_sp500 = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
@@ -1175,7 +1195,12 @@ const startTrumpQuestionInflation = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                trump_previous_inflation = Number(slider.value);  // save as number
+                trump_previous_inflation = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                trump_previous_inflation = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
@@ -1223,7 +1248,12 @@ const startBidenQuestionInflation = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                previous_biden_inflation = Number(slider.value);  // save as number
+                previous_biden_inflation = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                previous_biden_inflation = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
@@ -1640,7 +1670,12 @@ const startTrumpQuestionDebt = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                trump_previous_debt = Number(slider.value);  // save as number
+                trump_previous_debt = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                trump_previous_debt = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
@@ -1688,7 +1723,12 @@ const startBidenQuestionDebt = {
         if (slider) {
             slider.oninput = function () {
                 sliderValue.innerHTML = slider.value;
-                previous_biden_debt = Number(slider.value);  // save as number
+                previous_biden_debt = Number(slider.value);
+                continueBtn.disabled = false;
+            };
+            slider.onclick = function () {
+                sliderValue.innerHTML = slider.value;
+                previous_biden_debt = Number(slider.value);
                 continueBtn.disabled = false;
             };
         }
