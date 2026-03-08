@@ -21,11 +21,7 @@
 <body></body>
 <script>
   /* initialize jsPsych */
-  var jsPsych = initJsPsych({
-  on_finish: function() {
-    window.location = "https://app.prolific.co/submissions/complete?cc=C1KY2KUR";
-  }
-});          
+  var jsPsych = initJsPsych({});          
 
   /* Capture info from Prolific */
   var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
@@ -2380,13 +2376,16 @@ jsPsych.data.addProperties({
  ***********************/
 
 // Save data at the end of the experiment (make sure to update experiment_id)
-              const save_data = {
-                type: jsPsychPipe,
-                action: "save",
-                experiment_id: "GFcJtp4i9chF",
-                filename: filename,
-                data_string: ()=>jsPsych.data.get().csv()
-              };
+const save_data = {
+  type: jsPsychPipe,
+  action: "save",
+  experiment_id: "GFcJtp4i9chF",
+  filename: filename,
+  data_string: () => jsPsych.data.get().csv(),
+  on_finish: function() {
+    window.location = "https://app.prolific.co/submissions/complete?cc=C1KY2KUR";
+  }
+};
 
 // Add save_data to the timeline so it runs at the end
 selectedTimeline.push(save_data);
