@@ -2187,15 +2187,6 @@ const endquestionnaire = {
 };
 
 
-    const end = {
-        type: jsPsychHtmlButtonResponse,
-        stimulus: `<div style="width:1000px;">
-             <p>You've reached the end of the survey. Thank you for participating in our research!</p>
-         `,
-        choices: ["End"]
-    };
-
-
 /***********************
  * INDICATOR BLOCKS
  ***********************/
@@ -2331,7 +2322,7 @@ addIndicatorBlocksInOrder(cond1_timeline, {
   'debt': debt_block
 });
 
-cond1_timeline.push(endquestionnaire, end);
+cond1_timeline.push(endquestionnaire);
 
 /***********************
  * CONDITION 2 – COUNTERFACTUAL
@@ -2348,7 +2339,7 @@ addIndicatorBlocksInOrder(cond2_timeline, {
   'debt': debt_block_counter
 });
 
-cond2_timeline.push(endquestionnaire, end);
+cond2_timeline.push(endquestionnaire);
 
 /***********************
  * RANDOMLY SELECT CONDITION
