@@ -21,7 +21,7 @@
 <body></body>
 <script>
   /* initialize jsPsych */
-  var jsPsych = initJsPsych({});          
+  var jsPsych = initJsPsych();          
 
   /* Capture info from Prolific */
   var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
@@ -2386,7 +2386,6 @@ const save_data = {
     window.location = "https://app.prolific.co/submissions/complete?cc=C1KY2KUR";
   }
 };
-
 // Add save_data to the timeline so it runs at the end
 selectedTimeline.push(save_data);
 
