@@ -2344,18 +2344,27 @@ cond2_timeline.push(endquestionnaire);
 /***********************
  * RANDOMLY SELECT CONDITION
  ***********************/
-var selectedTimeline = jsPsych.randomization.sampleWithoutReplacement(
-  [cond1_timeline, cond2_timeline],
-  1
-)[0];
+// var selectedTimeline = jsPsych.randomization.sampleWithoutReplacement(
+//  [cond1_timeline, cond2_timeline],
+//  1
+// )[0];
 
 // Define the condition
-var condition;
-if (selectedTimeline === cond1_timeline) {
-    condition = "baseline";
-} else if (selectedTimeline === cond2_timeline) {
-    condition = "cf";
-}
+// var condition;
+// if (selectedTimeline === cond1_timeline) {
+//    condition = "baseline";
+// } else if (selectedTimeline === cond2_timeline) {
+//    condition = "cf";
+// }
+
+/***********************
+ *  SELECT BASELINE CONDITION
+ ***********************/
+
+var selectedTimeline = cond1_timeline;
+
+// Define the condition
+var condition = "baseline";
 
 // Store the condition in jsPsych's data
 jsPsych.data.addProperties({
