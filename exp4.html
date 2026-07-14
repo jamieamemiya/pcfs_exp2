@@ -1716,13 +1716,16 @@ const endquestionnaire = {
 // Shown right after a candidate's data screen, before that candidate's post-evaluation.
 // oppositeParty = the party of the candidate who did NOT actually serve in that data screen,
 // i.e. the hypothetical winner in the "I wonder what would have happened..." prompt.
-function makeCounterfactualTrial(oppositeParty, dataKey) {
+// imagePath = path to the figure that was just shown on the preceding data screen,
+// so participants can reference it while answering.
+function makeCounterfactualTrial(oppositeParty, dataKey, imagePath) {
   return {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
       return `
         <div style="width:1000px;">
-            <p>After seeing the data, someone says, "I wonder what would have happened had the <strong>${oppositeParty}</strong> candidate won."</p>
+            <img src="${imagePath}" width="auto" height="400">
+            <p style="margin-top:20px;">After seeing the data, someone says, "I wonder what would have happened had the <strong>${oppositeParty}</strong> candidate won."</p>
             <div style='margin-top: 20px;'>
                 <label for="slider">How relevant is this thought? <span id="slider-value"></span></label>
                 <div style="display: flex; justify-content: space-between; margin-top: 10px;">
@@ -1760,17 +1763,17 @@ function makeCounterfactualTrial(oppositeParty, dataKey) {
   };
 }
 
-const trumpCounterfactualSP500 = makeCounterfactualTrial('Democratic', 'trump_sp500');
-const bidenCounterfactualSP500 = makeCounterfactualTrial('Republican', 'biden_sp500');
+const trumpCounterfactualSP500 = makeCounterfactualTrial('Democratic', 'trump_sp500', 'img/sp500_trump.png');
+const bidenCounterfactualSP500 = makeCounterfactualTrial('Republican', 'biden_sp500', 'img/sp500_biden.png');
 
-const trumpCounterfactualLabor = makeCounterfactualTrial('Democratic', 'trump_labor');
-const bidenCounterfactualLabor = makeCounterfactualTrial('Republican', 'biden_labor');
+const trumpCounterfactualLabor = makeCounterfactualTrial('Democratic', 'trump_labor', 'img/labor_trump.png');
+const bidenCounterfactualLabor = makeCounterfactualTrial('Republican', 'biden_labor', 'img/labor_biden.png');
 
-const trumpCounterfactualInflation = makeCounterfactualTrial('Democratic', 'trump_inflation');
-const bidenCounterfactualInflation = makeCounterfactualTrial('Republican', 'biden_inflation');
+const trumpCounterfactualInflation = makeCounterfactualTrial('Democratic', 'trump_inflation', 'img/inflation_trump.png');
+const bidenCounterfactualInflation = makeCounterfactualTrial('Republican', 'biden_inflation', 'img/inflation_biden.png');
 
-const trumpCounterfactualDebt = makeCounterfactualTrial('Democratic', 'trump_debt');
-const bidenCounterfactualDebt = makeCounterfactualTrial('Republican', 'biden_debt');
+const trumpCounterfactualDebt = makeCounterfactualTrial('Democratic', 'trump_debt', 'img/debt_trump.png');
+const bidenCounterfactualDebt = makeCounterfactualTrial('Republican', 'biden_debt', 'img/debt_biden.png');
 
 /***********************
  * INDICATOR BLOCKS
