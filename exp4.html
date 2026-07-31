@@ -1719,6 +1719,14 @@ const endquestionnaire = {
 // imagePath = path to the figure that was just shown on the preceding data screen,
 // so participants can reference it while answering.
 function makeCounterfactualTrial(oppositeParty, dataKey, imagePath) {
+  // Holds the participant's current slider value for this trial instance.
+  // We can't rely on reading the DOM in on_finish, because by the time
+  // on_finish runs, jsPsych has already cleared the display element's
+  // HTML (it does this before calling finishTrial/on_finish), so the
+  // slider element no longer exists. That was causing every response to
+  // silently fall back to the default value of 5.
+  var capturedSliderValue = null;
+
   return {
     type: jsPsychHtmlButtonResponse,
     stimulus: function () {
@@ -1744,20 +1752,31 @@ function makeCounterfactualTrial(oppositeParty, dataKey, imagePath) {
       var sliderValue = document.getElementById('slider-value');
       var continueBtn = document.getElementById('continue-btn');
 
+      // Reset for this presentation of the trial, and initialize to the
+      // slider's starting value in case a participant clicks Continue
+      // without interacting with the slider at all (still reflects reality
+      // rather than silently defaulting elsewhere).
+      capturedSliderValue = slider ? Number(slider.value) : null;
+
       if (slider) {
         slider.oninput = function () {
           sliderValue.innerHTML = slider.value;
           continueBtn.disabled = false;
+          capturedSliderValue = Number(slider.value);
         };
         slider.onclick = function () {
           sliderValue.innerHTML = slider.value;
           continueBtn.disabled = false;
+          capturedSliderValue = Number(slider.value);
         };
       }
     },
     on_finish: function (data) {
-      var slider = document.getElementById('slider');
-      data['counterfactual_relevance_' + dataKey] = slider ? Number(slider.value) : 5;
+      // NOTE: by the time on_finish runs, the plugin has already cleared the
+      // display element, so document.getElementById('slider') returns null
+      // here. We must rely on the value captured during on_load's event
+      // listeners (above) instead of querying the DOM in on_finish.
+      data['counterfactual_relevance_' + dataKey] = capturedSliderValue !== null ? capturedSliderValue : 5;
       console.log("Counterfactual relevance (" + dataKey + ") stored: ", data['counterfactual_relevance_' + dataKey]);
     }
   };
